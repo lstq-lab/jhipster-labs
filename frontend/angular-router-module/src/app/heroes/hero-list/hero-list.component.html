@@ -1,0 +1,3 @@
+<div *ngFor="let hero of heros">
+  <p>name: <a [routerLink]="['/hero', hero.id]">{{hero.name}}</a></p>
+</div>

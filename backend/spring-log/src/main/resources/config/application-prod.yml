@@ -1,0 +1,6 @@
+logging:
+  level:
+    ROOT: INFO
+    com.freemud.gateway: INFO
+    io.github.jhipster: INFO
+

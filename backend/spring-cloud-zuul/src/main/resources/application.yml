@@ -1,0 +1,28 @@
+# See http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
+zuul: # those values must be configured depending on the application specific needs
+  sensitive-headers: Cookie,Set-Cookie #see https://github.com/spring-cloud/spring-cloud-netflix/issues/3126
+  host:
+    max-total-connections: 1000
+    max-per-route-connections: 100
+  prefix: /services
+  semaphore:
+    max-semaphores: 500
+    
+    
+jhipster:
+  gateway:
+    authorized-microservices-endpoints: # Access Control Policy, if left empty for a route, all endpoints will be accessible
+      app1: /api,/v2/api-docs # recommended dev configuration
+    rate-limiting:
+      enabled: false
+      limit: 100000
+      duration-in-seconds: 3600
+
+
+            
+
+
+           
+     
+        
+       

@@ -1,0 +1,20 @@
+logging:
+  level:
+    ROOT: DEBUG
+    io.github.jhipster: DEBUG
+    com.freemud.gateway: DEBUG
+    
+    
+jhipster:
+  logging:
+    use-json-format: true # By default, logs are not in Json format
+    logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
+      enabled: true
+      host: localhost
+      port: 5000
+      queue-size: 512
+  metrics:
+    logs: # Reports metrics in the logs
+      enabled: true
+      report-frequency: 60 # in seconds
+

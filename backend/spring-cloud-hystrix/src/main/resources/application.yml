@@ -1,0 +1,13 @@
+# Hystrix
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+           
+# Feign
+feign:
+  hystrix:
+    enabled: true

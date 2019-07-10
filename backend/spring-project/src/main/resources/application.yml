@@ -1,0 +1,4 @@
+jhipster:
+  metrics:
+    logs:
+      enabled: false

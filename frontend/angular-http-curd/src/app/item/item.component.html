@@ -1,0 +1,70 @@
+<div>
+  <label>新增操作</label>
+  <form [formGroup]="createForm" (ngSubmit)="create(createForm.value)">
+    <div>
+      <label>Name: </label>
+      <input type="text" formControlName="name" />
+    </div>
+    <div>
+      <label>Price：</label>
+      <input type="text" formControlName="price" />
+    </div>
+    <div>
+      <label>Brand：</label>
+      <input type="text" formControlName="brand" />
+    </div>
+    <button class="button" type="submit">新增</button>
+  </form>
+  <p>---------------------------------</p>
+  <label for="">查询指定商品</label>
+  <form [formGroup]="findForm" (ngSubmit)="find(findForm.value)">
+    <div>
+      <label>Id: </label>
+      <input type="text" formControlName="id" />
+    </div>
+    <button class="button" type="submit">查询</button>
+  </form>
+
+  <p>---------------------------------</p>
+
+  <label> 更新操作</label>
+  <form [formGroup]="updateForm" (ngSubmit)="update(updateForm.value)">
+    <div>
+      <label>Id: </label>
+      <input type="text" formControlName="id" />
+    </div>
+    <div>
+      <label>Name: </label>
+      <input type="text" formControlName="name" />
+    </div>
+    <div>
+      <label>Price：</label>
+      <input type="text" formControlName="price" />
+    </div>
+    <div>
+      <label>Brand：</label>
+      <input type="text" formControlName="brand" />
+    </div>
+    <button class="button" type="submit">更新</button>
+  </form>
+  <p>---------------------------------</p>
+
+  <label for="">删除操作</label>
+  <form [formGroup]="deletedForm" (ngSubmit)="delete(deletedForm.value)">
+    <div>
+      <label>Id: </label>
+      <input type="text" formControlName="id" />
+    </div>
+    <button class="button" type="submit">删除</button>
+  </form>
+
+  <p>---------------------------------</p>
+  <button (click)="query()">获取所有数据</button>
+
+  <div *ngFor="let item of items">
+
+    <h3>{{item.name}}</h3>
+    <p>{{item.id}}</p>
+    <p>{{item.price}}</p>
+    <p>{{item.brand}}</p>
+  </div>

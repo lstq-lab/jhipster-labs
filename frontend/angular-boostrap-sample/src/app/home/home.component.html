@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-4">
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <label class="form-label">分组设置：</label>
+        <input type="text" class="form-control">
+      </div>
+    </form>
+  </div>
+  <div class="col-8 text-center ">
+    <button type="button" class="btn btn-primary">开始时间</button>
+    <button type="button" class="btn btn-primary">结束时间</button>
+    <label for="">01:01:00</label>
+  </div>
+</div>
+
+<div class="row">
+  <button type="button" class="btn btn-primary" (click)="open(content)">新增锻炼项</button>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">新增锻炼项</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="execise-project">锻炼项目：</label>
+          <input type="text" [(ngModel)]="execiseProject" name="execise-project">
+        </div>
+        <div class="form-group">
+          <label for="execise-target">锻炼目标：</label>
+          <input type="text" [(ngModel)]="execiseTarget" name="execise-target">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="save()">保存</button>
+    </div>
+  </ng-template>
+
+</div>
+
+
+<div class="row">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">锻炼项目</th>
+        <th scope="col">目标</th>
+        <th scope="col" *ngFor="let item of group">
+          {{item.name}}
+        </th>
+        <th scope="col">是否完成</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of entrys; index as i">
+        <td>
+          {{entry.name}}
+        </td>
+        <td>{{entry.target}}</td>
+        <td *ngFor="let item of entry.entryGroup">{{item.number}}</td>
+        <td>{{entry.isFinished}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
