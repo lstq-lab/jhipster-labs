@@ -18,6 +18,7 @@
 		<module>jhipster-audit</module>
 		<module>jhipster-liquibase</module>
 		<module>jhipster-tls</module>
+		<module>jhipster-ddd</module>
 	</modules>
 
 	<properties>
